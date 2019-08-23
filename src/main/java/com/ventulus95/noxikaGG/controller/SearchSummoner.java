@@ -23,7 +23,7 @@ import com.ventulus95.noxikaGG.dto.Summoner;
 
 @Controller
 public class SearchSummoner {
-	final static String API_KEY = "RGAPI-d87222fd-5dc3-4a19-babf-44995cd1a3d1";
+	final static String API_KEY = "RGAPI-6317fff7-d9d2-4319-b314-d4edb7afa3ef";
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public String searchSummoner(Model model, HttpServletRequest httpServletRequest) {
