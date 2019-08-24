@@ -10117,4 +10117,9 @@ a.text-dark:hover, a.text-dark:focus {
 	transform: translate(-50%, -50%);
 	width: 100%;
 }
+
+#idLevel *{
+	text-align: center;
+	margin-bottom: 5px;
+}
 /*# sourceMappingURL=bootstrap.css.map */

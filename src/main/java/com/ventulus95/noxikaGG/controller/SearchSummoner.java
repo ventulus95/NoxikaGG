@@ -20,10 +20,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ventulus95.noxikaGG.dto.LeagueEntrydto;
 import com.ventulus95.noxikaGG.dto.Summoner;
+import static com.ventulus95.noxikaGG.dao.ApiKeyValue.API_KEY;;
 
 @Controller
 public class SearchSummoner {
-	final static String API_KEY = "RGAPI-6317fff7-d9d2-4319-b314-d4edb7afa3ef";
+	
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public String searchSummoner(Model model, HttpServletRequest httpServletRequest) {

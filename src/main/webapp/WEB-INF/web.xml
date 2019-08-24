@@ -29,7 +29,11 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	<!-- 에러페이지 설정 -->
+	<error-page>
+    <location>/errors</location>
+	</error-page>
+	
 	<!--페이지 내부의 모든 한글 인코딩.  -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
