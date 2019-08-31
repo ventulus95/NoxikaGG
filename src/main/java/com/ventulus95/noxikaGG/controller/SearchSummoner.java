@@ -62,6 +62,7 @@ public class SearchSummoner {
 		SimpleDateFormat longToString = new SimpleDateFormat("yyyy.MM.dd HH:mm", Locale.KOREA);
 //		longToString.setTimeZone(time);
 		String parsingTime = longToString.format(longTimeparse);
+		String leagueName ="";
 		try{            
 			String urlstr = "https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/"+
 					temp.getId()		+"?api_key="+API_KEY;
@@ -85,6 +86,21 @@ public class SearchSummoner {
 			int leaguePoints = k.get("leaguePoints").getAsInt();
 			String leagueId = k.get("leagueId").getAsString();
 			leagueInfo = new LeagueEntrydto(queueType, wins, losses, leagueId, rank,tier, leaguePoints);
+			
+			urlstr = "https://kr.api.riotgames.com/lol/league/v4/leagues/"+
+					leagueInfo.getLeagueId()		+"?api_key="+API_KEY;
+			url = new URL(urlstr);
+			urlconnection = (HttpURLConnection) url.openConnection();
+			urlconnection.setRequestMethod("GET");
+			br = new BufferedReader(new InputStreamReader(urlconnection.getInputStream(),"UTF-8")); // 여기에 문자열을 받아와라.
+			result = "";
+			line ="";
+			while((line = br.readLine()) != null) { // 그 받아온 문자열을 계속 br에서 줄단위로 받고 출력하겠다.
+				result = result + line;
+			}
+			jsonParser = new JsonParser();
+			k = (JsonObject) jsonParser.parse(result);
+			leagueName = k.get("name").getAsString();
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}
@@ -93,6 +109,7 @@ public class SearchSummoner {
 		model.addAttribute("startTime", longTimeparse);
 		model.addAttribute("leagueInfo", leagueInfo);
 		model.addAttribute("tierImgURL", "img/emblems/Emblem_"+leagueInfo.getTier()+".png");
+		model.addAttribute("leagueName", leagueName);
 		return "result";
 	}
 	

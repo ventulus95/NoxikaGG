@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,31 +21,29 @@
 			</form>
 	</nav>
 	<div class="container p-5 shadow-lg p-3 mb-5 bg-white rounded" >
-		<div class="row">
+		<div class="row h-100 justify-content-center align-items-center">
 				<div class ="col-sm-4">
-					<img alt="아이콘" src=${ profileImgURL} class="rounded img-thumbnail mx-auto d-block" style="max-width: 70%;">
+					<img alt="아이콘" src=${ profileImgURL} class="rounded-llg mx-auto d-block" style="max-width: 70%;">
 				</div>
-				<div class ="col-sm-2"> </div>
-				<div class ="col-sm-6" id="idLevel">
-					<h1> 당신의 아이디는?</h1>
+				<div class ="col-sm-1"> </div>
+				<div class ="col-sm-7" id="idLevel">
 					<h3>${summoner.name}</h3>
-					<h2> 당신의 레벨은?</h2>
-					<p>${summoner.getSummonerLevel()}</p>
+					<p>Lv. ${summoner.getSummonerLevel()}</p>
 				</div>
 		</div>
-		<div class="row">
-			<div class ="col-12"></div>
-		</div>
-		<div class ="row">
-			<div class="col-md-4">
-				<img alt="랭크 엠블램" src=${ tierImgURL} class="mx-auto d-block" style="max-width: 95%;">
+		<div class ="col-12" style="height: 100px" ></div>
+		<div class ="row h-100 justify-content-center align-items-center">
+			<div class="col-md-5">
+				<img alt="랭크 엠블램" src=${ tierImgURL} class="mx-auto d-block" style="max-width: 75%;">
 			</div>
-			<div class ="col-md-2"> </div>
-			<div class ="col-md-6">
-				<h3>승리/패배</h3>
-				<span style="color: #007bff">${leagueInfo.getWins()}</span><span>/</span><span style="color:#dc3545">${leagueInfo.getLosses()}</span>
+			<div class ="col-md-1"> </div>
+			<div class ="col-md-6" style="text-align: center;">
+				<h2>승리/패배</h2>
+				<p style="color: #007bff; font-size: 24px; display: inline">${leagueInfo.getWins()}</p><p style="font-size: 24px; display: inline">/</p><p style="color:#dc3545; font-size: 24px; display:inline">${leagueInfo.getLosses()}</p>
+				<fmt:formatNumber var="percent" value="${leagueInfo.getWins()/(leagueInfo.getWins()+leagueInfo.getLosses())}" pattern="0.00%" />
+				<span style="color: #6c757d; font-size:18px;"> (${percent}) </span>
 				<h3>당신의 티어는?</h3>
-				<p>티어는 ${leagueInfo.getRank()}입니다.</p>
+				<p>당신의 리그는 ${leagueName}, ${leagueInfo.getTier()} ${leagueInfo.getRank()} 단계 입니다.</p>
 			</div>
 		</div>
 	</div>

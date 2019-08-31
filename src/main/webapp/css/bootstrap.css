@@ -6703,6 +6703,11 @@ button.bg-dark:focus {
   border-radius: 0.3rem !important;
 }
 
+/* custom rounded-lg */
+.rounded-llg {
+  border-radius: 1.5rem !important;
+}
+
 .rounded-circle {
   border-radius: 50% !important;
 }
