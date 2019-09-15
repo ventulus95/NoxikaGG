@@ -27,14 +27,20 @@
 			<img id="logo" src="img/logo.png">
 		</div>
 	    <div class="container-fluid h-50 w-75">
-			<div class="row h-100 justify-content-center align-items-center">
+			<div class="row justify-content-center align-items-center">
 				<div class="col-12">
-					<form action="/noxikaGG/search" method="GET">
+					<form id="searchWindow" action="/noxikaGG/search" method="GET" onclick="clickShowing('log')">
 						<div class="embed-submit-field">
 							<input type="text" placeholder="당신의 아이디를 검색하세요!" name="title">
 							<button type="submit">검색!</button>
 						</div>
 					</form>
+				</div>
+				<div id=log class="col-12 border border-dark p-4 m-4" style="display: none">
+					<c:forEach var="List" items="${idList}" varStatus="s" end="5">
+						<img alt="랭크 엠블램" src=<c:out value="http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${List.getProfileIconId()}.png" /> style="max-width: 5%; ">
+						<a href="javascript:void(0);" onclick="idRedirect('${List.getName()}'); return false;" style="padding-left:15px; padding-right:15px;">${List.getName()}</a>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
@@ -52,8 +58,30 @@
       </div>
 	</footer>
     
-    	
-	
+    <script>
+		function idRedirect(name){
+			var replace = name.replace( /(\s*)/g, "");
+		 	document.location.href="/noxikaGG/search?title="+replace; // 선택한 페이지로 
+		};
+		
+		function clickShowing(id){
+			var e = document.getElementById(id);
+			if(e.style.display == 'table')
+		          e.style.display = 'none';
+		       else
+		          e.style.display = 'table';
+		}
+		
+	 	function t(){		
+			var form = document.getElementById("searchWindow");
+			var e = document.getElementById("log");
+			form.addEventListener("focusout", function( ) {
+				  e.style.display = 'none';    
+				}, true);
+		}
+		
+		/* t(); */ 
+	</script>	
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
