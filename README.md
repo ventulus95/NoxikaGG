@@ -41,14 +41,14 @@
 
 [블로그 프로젝트 구현과정](https://sundries-in-myidea.tistory.com/category/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
 
-* [1편] (https://sundries-in-myidea.tistory.com/39?category=797831)
+* [1편](https://sundries-in-myidea.tistory.com/39?category=797831)
 
-* [2편] (https://sundries-in-myidea.tistory.com/40?category=797831)
+* [2편](https://sundries-in-myidea.tistory.com/40?category=797831)
 
-* [3편] (https://sundries-in-myidea.tistory.com/41?category=797831)
+* [3편](https://sundries-in-myidea.tistory.com/41?category=797831)
 
-* [4편] (https://sundries-in-myidea.tistory.com/43?category=797831)
+* [4편](https://sundries-in-myidea.tistory.com/43?category=797831)
 
-* [5편] (https://sundries-in-myidea.tistory.com/45?category=797831)
+* [5편](https://sundries-in-myidea.tistory.com/45?category=797831)
 
-* [6편 (완)] (https://sundries-in-myidea.tistory.com/48?category=797831)
+* [6편 (완)](https://sundries-in-myidea.tistory.com/48?category=797831)
