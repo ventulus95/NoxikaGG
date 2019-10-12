@@ -1,4 +1,4 @@
-# NoxikaGG
+# NoxikaGG [![HitCount](http://hits.dwyl.io/ventulus95/noxikaGG.svg)](http://hits.dwyl.io/ventulus95/noxikaGG)
 ## OP.GG Clone Coding 클론코딩 프로젝트
 
 ![로고](src/main/webapp/img/logo.png)
